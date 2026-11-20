@@ -1,0 +1,1696 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黑兽2第二季樱花动漫 - 官网企划_深度动画品牌社区</title>
+<meta name="description" content="黑兽2第二季樱花动漫官方网站，专注暗黑奇幻动画ip的精品内容社区，汇聚原作设定、深度解析、创作者同人与官方企划动态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e0f14'/%3E%3Cpath d='M20 44 L32 16 L44 44 Z' fill='%23e8543f'/%3E%3Ccircle cx='32' cy='38' r='5' fill='%23f2c14e'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --dk-bg:#0e0f14;
+    --dk-panel:#161821;
+    --dk-panel2:#1d2030;
+    --dk-line:#2b2f42;
+    --dk-txt:#e8e9f0;
+    --dk-sub:#9aa0b5;
+    --dk-red:#e8543f;
+    --dk-amber:#f2c14e;
+    --dk-cyan:#4fd1c5;
+    --dk-shadow:0 14px 40px rgba(0,0,0,.45);
+    --dk-radius:14px;
+    --dk-head-h:112px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--dk-bg);
+    color:var(--dk-txt);
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.75;
+    font-size:15px;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+  ul{list-style:none}
+  .dk-wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+  .dk-anchor{scroll-margin-top:calc(var(--dk-head-h) + 16px)}
+
+  /* ===== 吸顶：公告条 + 页头 ===== */
+  .dk-sticky{
+    position:sticky;top:0;z-index:120;
+    background:rgba(14,15,20,.96);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--dk-line);
+  }
+  .dk-notice{
+    background:linear-gradient(90deg,#3a1c18,#5c241c 45%,#3a1c18);
+    border-bottom:1px solid #6b2b22;
+    font-size:13px;
+    color:#ffd9d2;
+  }
+  .dk-notice .dk-wrap{
+    display:flex;align-items:center;gap:14px;
+    padding-top:7px;padding-bottom:7px;flex-wrap:wrap;
+  }
+  .dk-notice-tag{
+    background:var(--dk-red);color:#fff;font-size:11px;
+    padding:1px 9px;border-radius:20px;font-weight:700;letter-spacing:.5px;
+    flex-shrink:0;
+  }
+  .dk-notice-line{flex:1;min-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .dk-notice-line b{color:var(--dk-amber)}
+  .dk-notice-more{color:#ffb4a6;font-size:12px;border-bottom:1px dashed #a3402f;flex-shrink:0}
+
+  .dk-header .dk-wrap{
+    display:flex;align-items:center;gap:26px;
+    padding-top:14px;padding-bottom:14px;
+  }
+  .dk-brand{display:flex;align-items:center;gap:11px;flex-shrink:0}
+  .dk-brand-mark{
+    width:42px;height:42px;border-radius:11px;
+    background:linear-gradient(145deg,#e8543f,#8c2318);
+    display:grid;place-items:center;
+    box-shadow:0 0 0 1px #ff7a63 inset,0 8px 20px rgba(232,84,63,.35);
+  }
+  .dk-brand-mark svg{width:24px;height:24px}
+  .dk-brand-name{font-size:18px;font-weight:800;letter-spacing:.5px;line-height:1.25}
+  .dk-brand-name small{display:block;font-size:10px;font-weight:500;color:var(--dk-sub);letter-spacing:2px}
+
+  .dk-nav{display:flex;gap:4px;flex:1;flex-wrap:wrap}
+  .dk-nav a{
+    font-size:14px;padding:7px 13px;border-radius:9px;color:var(--dk-sub);
+    transition:.2s;font-weight:500;white-space:nowrap;
+  }
+  .dk-nav a:hover,.dk-nav a.is-active{color:#fff;background:var(--dk-panel2)}
+
+  .dk-search{
+    display:flex;align-items:center;gap:8px;
+    background:var(--dk-panel);border:1px solid var(--dk-line);
+    border-radius:11px;padding:6px 8px 6px 13px;min-width:236px;
+    transition:.2s;flex-shrink:0;
+  }
+  .dk-search:focus-within{border-color:var(--dk-red);box-shadow:0 0 0 3px rgba(232,84,63,.16)}
+  .dk-search input{
+    background:none;border:none;outline:none;color:#fff;font-size:13px;width:100%;
+  }
+  .dk-search input::placeholder{color:#68708a}
+  .dk-search-btn{
+    background:var(--dk-red);border-radius:8px;width:30px;height:30px;
+    display:grid;place-items:center;flex-shrink:0;transition:.2s;
+  }
+  .dk-search-btn:hover{background:#ff6a53}
+  .dk-search-btn svg{width:15px;height:15px;fill:#fff}
+  .dk-search-hint{
+    font-size:12px;color:var(--dk-amber);margin-top:6px;display:none;
+    padding-left:4px;
+  }
+  .dk-search-hint.is-show{display:block}
+
+  .dk-burger{
+    display:none;width:42px;height:42px;border-radius:10px;
+    border:1px solid var(--dk-line);background:var(--dk-panel);
+    place-items:center;flex-shrink:0;
+  }
+  .dk-burger span{display:block;width:19px;height:2px;background:var(--dk-txt);margin:2.5px 0;border-radius:2px;transition:.25s}
+  .dk-burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .dk-burger.is-open span:nth-child(2){opacity:0}
+  .dk-burger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  .dk-mobile-nav{
+    display:none;flex-direction:column;gap:2px;
+    padding:8px 22px 16px;background:var(--dk-bg);border-bottom:1px solid var(--dk-line);
+  }
+  .dk-mobile-nav a{padding:11px 12px;border-radius:9px;color:var(--dk-sub);font-size:14px}
+  .dk-mobile-nav a:hover{background:var(--dk-panel);color:#fff}
+  .dk-mobile-nav.is-open{display:flex}
+
+  /* ===== 首屏 ===== */
+  .dk-hero{
+    position:relative;overflow:hidden;
+    border-bottom:1px solid var(--dk-line);
+    background:
+      radial-gradient(900px 420px at 82% -10%,rgba(232,84,63,.22),transparent 70%),
+      radial-gradient(700px 380px at 8% 110%,rgba(79,209,197,.13),transparent 70%),
+      var(--dk-bg);
+  }
+  .dk-hero::after{
+    content:"";position:absolute;inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+    background-size:46px 46px;
+    pointer-events:none;mask-image:radial-gradient(circle at 50% 30%,#000,transparent 78%);
+  }
+  .dk-hero-grid{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:1.05fr .95fr;gap:52px;
+    padding:66px 0 58px;align-items:center;
+  }
+  .dk-pill{
+    display:inline-flex;align-items:center;gap:8px;
+    border:1px solid #42312b;background:#1c1613;color:var(--dk-amber);
+    font-size:12px;padding:5px 13px;border-radius:30px;font-weight:600;letter-spacing:.4px;
+  }
+  .dk-pill i{width:6px;height:6px;border-radius:50%;background:var(--dk-red);display:block;animation:dkPulse 1.8s infinite}
+  @keyframes dkPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
+
+  .dk-hero h1{
+    font-size:clamp(34px,4.6vw,58px);line-height:1.14;font-weight:900;
+    margin:20px 0 6px;letter-spacing:1px;
+  }
+  .dk-hero h1 span{
+    background:linear-gradient(100deg,#ff8a72,#e8543f 45%,#f2c14e);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .dk-hero-sub{color:var(--dk-amber);font-size:16px;font-weight:600;letter-spacing:1px;margin-bottom:14px}
+  .dk-hero-desc{color:var(--dk-sub);font-size:15px;max-width:560px}
+  .dk-hero-desc b{color:#fff}
+
+  .dk-stats{display:flex;gap:34px;margin:30px 0 26px;flex-wrap:wrap}
+  .dk-stat b{font-size:27px;font-weight:900;color:#fff;letter-spacing:.5px}
+  .dk-stat b em{font-style:normal;font-size:14px;color:var(--dk-red);margin-left:2px}
+  .dk-stat span{display:block;font-size:12px;color:var(--dk-sub);letter-spacing:.6px}
+
+  .dk-cta{display:flex;gap:13px;flex-wrap:wrap}
+  .dk-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 24px;border-radius:11px;font-size:14px;font-weight:700;
+    transition:.22s;letter-spacing:.4px;
+  }
+  .dk-btn-primary{background:linear-gradient(135deg,#e8543f,#c93b28);color:#fff;box-shadow:0 10px 26px rgba(232,84,63,.34)}
+  .dk-btn-primary:hover{transform:translateY(-2px);box-shadow:0 15px 32px rgba(232,84,63,.46)}
+  .dk-btn-ghost{border:1px solid var(--dk-line);color:var(--dk-txt);background:var(--dk-panel)}
+  .dk-btn-ghost:hover{border-color:var(--dk-red);color:#fff;background:#221a1a}
+
+  .dk-hero-visual{position:relative}
+  .dk-hero-cover{
+    border-radius:18px;overflow:hidden;position:relative;
+    border:1px solid #33374b;box-shadow:var(--dk-shadow);
+  }
+  .dk-hero-cover svg{width:100%;display:block;aspect-ratio:16/10}
+  .dk-hero-cover-badge{
+    position:absolute;left:14px;top:14px;z-index:3;
+    background:rgba(232,84,63,.94);color:#fff;font-size:11px;font-weight:800;
+    padding:4px 11px;border-radius:6px;letter-spacing:1px;
+  }
+  .dk-hero-cover-info{
+    position:absolute;left:0;right:0;bottom:0;z-index:3;
+    padding:28px 18px 16px;
+    background:linear-gradient(to top,rgba(7,8,12,.95),transparent);
+  }
+  .dk-hero-cover-info h3{font-size:17px;font-weight:800;margin-bottom:3px}
+  .dk-hero-cover-info p{font-size:12px;color:#b9bece}
+  .dk-hero-mini{
+    position:absolute;right:-16px;bottom:-24px;width:172px;z-index:4;
+    border-radius:12px;overflow:hidden;border:1px solid #3a3f57;
+    box-shadow:0 16px 36px rgba(0,0,0,.6);
+  }
+  .dk-hero-mini svg{width:100%;aspect-ratio:16/10;display:block}
+
+  /* ===== 通用区块 ===== */
+  .dk-section{padding:68px 0}
+  .dk-section.alt{background:#11131b;border-top:1px solid var(--dk-line);border-bottom:1px solid var(--dk-line)}
+  .dk-sec-head{margin-bottom:36px;max-width:760px}
+  .dk-sec-kicker{
+    font-size:12px;font-weight:800;letter-spacing:3px;color:var(--dk-red);
+    text-transform:uppercase;display:flex;align-items:center;gap:10px;
+  }
+  .dk-sec-kicker::before{content:"";width:26px;height:2px;background:var(--dk-red);display:block}
+  .dk-sec-head h2{
+    font-size:clamp(24px,2.8vw,34px);font-weight:900;margin:12px 0 10px;letter-spacing:.6px;
+  }
+  .dk-sec-head p{color:var(--dk-sub);font-size:14.5px}
+
+  /* ===== 焦点内容 ===== */
+  .dk-focus-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:22px}
+  .dk-focus-main{
+    border-radius:var(--dk-radius);overflow:hidden;position:relative;
+    border:1px solid var(--dk-line);background:var(--dk-panel);
+  }
+  .dk-focus-main .dk-cover{position:relative}
+  .dk-focus-main svg{width:100%;aspect-ratio:16/9;display:block}
+  .dk-focus-main-body{padding:18px 20px 22px}
+  .dk-focus-main-body h3{font-size:19px;font-weight:800;margin-bottom:8px}
+  .dk-focus-main-body p{font-size:13.5px;color:var(--dk-sub)}
+  .dk-focus-side{display:grid;grid-template-rows:repeat(2,1fr);gap:22px}
+  .dk-focus-sm{
+    display:grid;grid-template-columns:150px 1fr;gap:14px;
+    border:1px solid var(--dk-line);border-radius:var(--dk-radius);
+    background:var(--dk-panel);overflow:hidden;transition:.22s;
+  }
+  .dk-focus-sm:hover{border-color:#4a4f68;transform:translateY(-2px)}
+  .dk-focus-sm .dk-cover svg{width:100%;height:100%;min-height:106px;display:block;aspect-ratio:16/10}
+  .dk-focus-sm-body{padding:12px 14px 12px 0;display:flex;flex-direction:column;justify-content:center}
+  .dk-focus-sm-body h4{font-size:14.5px;font-weight:700;line-height:1.5;margin-bottom:5px}
+  .dk-focus-sm-body p{font-size:12px;color:var(--dk-sub)}
+
+  .dk-meta-row{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--dk-sub);margin-top:10px;align-items:center}
+  .dk-meta-row .dk-tag{
+    background:#251d1d;color:#ff9d8a;border:1px solid #4a2a24;
+    padding:1px 8px;border-radius:5px;font-size:11px;
+  }
+
+  /* ===== 视频卡片流 ===== */
+  .dk-video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .dk-vcard{
+    background:var(--dk-panel);border:1px solid var(--dk-line);
+    border-radius:var(--dk-radius);overflow:hidden;transition:.24s;
+    display:flex;flex-direction:column;
+  }
+  .dk-vcard:hover{transform:translateY(-4px);border-color:#4a4f68;box-shadow:0 16px 34px rgba(0,0,0,.42)}
+  .dk-vcard .dk-cover{position:relative;overflow:hidden}
+  .dk-vcard .dk-cover svg{width:100%;aspect-ratio:16/9;display:block;transition:.4s}
+  .dk-vcard:hover .dk-cover svg{transform:scale(1.05)}
+  .dk-play{
+    position:absolute;inset:0;display:grid;place-items:center;
+  }
+  .dk-play i{
+    width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+    background:rgba(14,15,20,.62);border:1px solid rgba(255,255,255,.4);
+    backdrop-filter:blur(3px);transition:.2s;
+  }
+  .dk-play svg{width:15px;height:15px;fill:#fff;margin-left:2px}
+  .dk-vcard:hover .dk-play i{background:var(--dk-red);border-color:var(--dk-red);transform:scale(1.08)}
+  .dk-vcard-body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
+  .dk-vcard-body h3{font-size:15px;font-weight:800;line-height:1.55;margin-bottom:6px}
+  .dk-vcard-body p{font-size:12.5px;color:var(--dk-sub);flex:1}
+  .dk-vcard-foot{
+    display:flex;align-items:center;gap:10px;margin-top:13px;
+    padding-top:12px;border-top:1px dashed var(--dk-line);
+  }
+  .dk-avatar{
+    width:28px;height:28px;border-radius:50%;flex-shrink:0;
+    display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff;
+  }
+  .dk-vcard-foot .dk-author{font-size:12px;color:var(--dk-sub);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .dk-actions{display:flex;gap:9px}
+  .dk-act{
+    display:flex;align-items:center;gap:4px;font-size:11.5px;color:var(--dk-sub);
+    transition:.2s;padding:2px 3px;border-radius:6px;
+  }
+  .dk-act:hover{color:#fff}
+  .dk-act svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8}
+  .dk-act.is-liked{color:var(--dk-red)}
+  .dk-act.is-liked svg{fill:var(--dk-red);stroke:var(--dk-red)}
+  .dk-act.is-saved{color:var(--dk-amber)}
+  .dk-act.is-saved svg{fill:var(--dk-amber);stroke:var(--dk-amber)}
+
+  /* ===== 专题 ===== */
+  .dk-topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .dk-topic{
+    border-radius:var(--dk-radius);overflow:hidden;position:relative;
+    border:1px solid var(--dk-line);min-height:212px;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:20px;transition:.24s;isolation:isolate;
+  }
+  .dk-topic svg{position:absolute;inset:0;width:100%;height:100%;z-index:-2}
+  .dk-topic::after{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(to top,rgba(8,9,13,.94),rgba(8,9,13,.28));
+  }
+  .dk-topic:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(0,0,0,.5)}
+  .dk-topic-state{
+    align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.6px;
+    background:rgba(232,84,63,.92);color:#fff;padding:2px 9px;border-radius:5px;margin-bottom:auto;
+  }
+  .dk-topic-state.done{background:rgba(79,209,197,.9);color:#062a27}
+  .dk-topic h3{font-size:16.5px;font-weight:800;margin-bottom:5px}
+  .dk-topic p{font-size:12.5px;color:#bcc1d2}
+
+  /* ===== 创作者矩阵 ===== */
+  .dk-creator-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .dk-creator{
+    border:1px solid var(--dk-line);border-radius:var(--dk-radius);
+    padding:22px 18px;background:var(--dk-panel);text-align:center;transition:.24s;
+  }
+  .dk-creator:hover{border-color:#4a4f68;transform:translateY(-3px);background:var(--dk-panel2)}
+  .dk-creator-avatar{
+    width:60px;height:60px;border-radius:20px;margin:0 auto 13px;
+    display:grid;place-items:center;font-size:22px;font-weight:900;color:#fff;
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
+  }
+  .dk-creator h3{font-size:15px;font-weight:800}
+  .dk-creator .dk-field{font-size:12px;color:var(--dk-amber);margin:3px 0 8px;letter-spacing:.4px}
+  .dk-creator p{font-size:12.5px;color:var(--dk-sub);min-height:58px;text-align:left}
+  .dk-creator-data{
+    display:flex;justify-content:space-around;margin-top:10px;padding-top:12px;
+    border-top:1px dashed var(--dk-line);font-size:11.5px;color:var(--dk-sub);
+  }
+  .dk-creator-data b{display:block;color:#fff;font-size:14px}
+  .dk-creator-btn{
+    width:100%;margin-top:14px;padding:8px;border-radius:8px;
+    border:1px solid #4a2a24;color:#ff9d8a;font-size:12.5px;font-weight:700;background:#241a19;transition:.2s;
+  }
+  .dk-creator-btn:hover{background:var(--dk-red);color:#fff;border-color:var(--dk-red)}
+
+  /* ===== 作品墙 ===== */
+  .dk-wall{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+  .dk-wall-item{
+    position:relative;border-radius:11px;overflow:hidden;border:1px solid var(--dk-line);
+    transition:.24s;
+  }
+  .dk-wall-item:hover{transform:scale(1.02);border-color:#4a4f68}
+  .dk-wall-item svg{width:100%;height:100%;display:block}
+  .dk-wall-item.big{grid-column:span 3;grid-row:span 2}
+  .dk-wall-item.mid{grid-column:span 2;grid-row:span 2}
+  .dk-wall-item.small{grid-column:span 2;grid-row:span 1}
+  .dk-wall-cap{
+    position:absolute;left:0;right:0;bottom:0;padding:18px 11px 9px;
+    background:linear-gradient(to top,rgba(8,9,13,.92),transparent);
+    font-size:11.5px;font-weight:700;
+  }
+
+  /* ===== 深度解析（长文） ===== */
+  .dk-deep-grid{display:grid;grid-template-columns:1fr 320px;gap:40px;align-items:start}
+  .dk-article h3{font-size:18px;font-weight:800;margin:26px 0 10px;color:#fff;position:relative;padding-left:14px}
+  .dk-article h3::before{content:"";position:absolute;left:0;top:7px;width:4px;height:15px;border-radius:2px;background:var(--dk-red)}
+  .dk-article h3:first-child{margin-top:0}
+  .dk-article p{font-size:14.5px;color:#b6bccd;margin-bottom:13px;text-align:justify}
+  .dk-article b{color:var(--dk-amber);font-weight:700}
+  .dk-side-card{
+    border:1px solid var(--dk-line);border-radius:var(--dk-radius);
+    background:var(--dk-panel);padding:22px;position:sticky;top:calc(var(--dk-head-h) + 22px);
+  }
+  .dk-side-card h3{font-size:15px;font-weight:800;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--dk-line)}
+  .dk-rank-list li{display:flex;gap:11px;padding:9px 0;border-bottom:1px dashed var(--dk-line);align-items:flex-start}
+  .dk-rank-list li:last-child{border-bottom:none}
+  .dk-rank-num{
+    width:20px;height:20px;border-radius:6px;display:grid;place-items:center;
+    font-size:11px;font-weight:900;flex-shrink:0;margin-top:3px;
+    background:#242838;color:var(--dk-sub);
+  }
+  .dk-rank-list li:nth-child(1) .dk-rank-num{background:var(--dk-red);color:#fff}
+  .dk-rank-list li:nth-child(2) .dk-rank-num{background:var(--dk-amber);color:#2b1d00}
+  .dk-rank-list li:nth-child(3) .dk-rank-num{background:#4fd1c5;color:#052a27}
+  .dk-rank-txt{font-size:13px;line-height:1.5;flex:1}
+  .dk-rank-txt small{display:block;color:var(--dk-sub);font-size:11px;margin-top:2px}
+
+  /* ===== 评论 ===== */
+  .dk-review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .dk-review{
+    border:1px solid var(--dk-line);border-radius:var(--dk-radius);
+    background:var(--dk-panel);padding:18px 18px 16px;position:relative;
+  }
+  .dk-review:nth-child(2n){background:#1a1c26}
+  .dk-review-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .dk-review-head .dk-avatar{width:32px;height:32px;border-radius:50%}
+  .dk-review-head b{font-size:13px;display:block}
+  .dk-review-head span{font-size:11px;color:var(--dk-sub)}
+  .dk-review p{font-size:13px;color:#b6bccd;line-height:1.7}
+  .dk-stars{color:var(--dk-amber);font-size:12px;letter-spacing:1px;margin-top:10px}
+
+  /* ===== 动态/更新 ===== */
+  .dk-news-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .dk-news{
+    display:flex;gap:15px;padding:17px 18px;border-radius:var(--dk-radius);
+    border:1px solid var(--dk-line);background:var(--dk-panel);transition:.2s;
+  }
+  .dk-news:hover{background:var(--dk-panel2);border-color:#454b63}
+  .dk-news-date{
+    flex-shrink:0;width:54px;text-align:center;border-right:1px solid var(--dk-line);padding-right:13px;
+  }
+  .dk-news-date b{display:block;font-size:19px;font-weight:900;color:var(--dk-amber);line-height:1.2}
+  .dk-news-date span{font-size:11px;color:var(--dk-sub)}
+  .dk-news-body h3{font-size:14.5px;font-weight:800;margin-bottom:4px}
+  .dk-news-body p{font-size:12.5px;color:var(--dk-sub)}
+
+  /* ===== FAQ ===== */
+  .dk-faq{max-width:860px;margin:0 auto}
+  .dk-faq details{
+    border:1px solid var(--dk-line);border-radius:11px;background:var(--dk-panel);
+    margin-bottom:11px;overflow:hidden;
+  }
+  .dk-faq summary{
+    padding:15px 20px;font-size:14.5px;font-weight:700;cursor:pointer;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;list-style:none;
+  }
+  .dk-faq summary::-webkit-details-marker{display:none}
+  .dk-faq summary::after{
+    content:"+";font-size:20px;color:var(--dk-red);font-weight:400;transition:.2s;flex-shrink:0;
+  }
+  .dk-faq details[open] summary::after{transform:rotate(45deg)}
+  .dk-faq details[open]{border-color:#4a2a24;background:#1b1719}
+  .dk-faq .dk-faq-body{padding:0 20px 17px;font-size:13.5px;color:var(--dk-sub);line-height:1.8}
+
+  /* ===== 联系/投稿 ===== */
+  .dk-contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+  .dk-contact-panel{
+    border:1px solid var(--dk-line);border-radius:16px;padding:32px;
+    background:radial-gradient(500px 200px at 100% 0,rgba(232,84,63,.2),transparent 70%),var(--dk-panel);
+  }
+  .dk-contact-panel h3{font-size:21px;font-weight:900;margin-bottom:10px}
+  .dk-contact-panel p{font-size:13.5px;color:var(--dk-sub);margin-bottom:20px}
+  .dk-contact-list li{display:flex;gap:11px;font-size:13.5px;padding:7px 0;color:#bcc1d2;align-items:center}
+  .dk-contact-list li b{color:var(--dk-amber);min-width:64px;font-weight:700}
+
+  /* ===== 页脚 ===== */
+  .dk-footer{background:#0a0b10;border-top:1px solid var(--dk-line);padding:52px 0 26px}
+  .dk-footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px;padding-bottom:34px;border-bottom:1px solid var(--dk-line)}
+  .dk-footer-brand .dk-brand{margin-bottom:14px}
+  .dk-footer-brand p{font-size:13px;color:var(--dk-sub);max-width:330px}
+  .dk-footer h4{font-size:13.5px;font-weight:800;margin-bottom:14px;color:#fff;letter-spacing:.5px}
+  .dk-footer-links li{margin-bottom:9px}
+  .dk-footer-links a{font-size:13px;color:var(--dk-sub);transition:.2s}
+  .dk-footer-links a:hover{color:var(--dk-red)}
+  .dk-footer-bottom{
+    padding-top:22px;display:flex;justify-content:space-between;gap:16px;
+    flex-wrap:wrap;font-size:12px;color:#6b7288;
+  }
+
+  /* ===== Toast ===== */
+  .dk-toast{
+    position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+    background:#22283a;border:1px solid #3d4460;color:#fff;
+    padding:11px 22px;border-radius:11px;font-size:13.5px;z-index:300;
+    opacity:0;pointer-events:none;transition:.28s;box-shadow:var(--dk-shadow);
+  }
+  .dk-toast.is-show{opacity:1;transform:translate(-50%,0)}
+
+  /* ===== 回到顶部 ===== */
+  .dk-top-btn{
+    position:fixed;right:24px;bottom:26px;z-index:200;
+    width:46px;height:46px;border-radius:13px;
+    background:var(--dk-red);display:grid;place-items:center;
+    box-shadow:0 10px 26px rgba(232,84,63,.4);opacity:0;pointer-events:none;
+    transform:translateY(14px);transition:.28s;
+  }
+  .dk-top-btn.is-show{opacity:1;pointer-events:auto;transform:translateY(0)}
+  .dk-top-btn svg{width:19px;height:19px;fill:none;stroke:#fff;stroke-width:2.2}
+
+  /* ===== 弹窗 ===== */
+  .dk-modal{
+    position:fixed;inset:0;z-index:400;display:none;place-items:center;padding:24px;
+    background:rgba(5,6,10,.8);backdrop-filter:blur(4px);
+  }
+  .dk-modal.is-open{display:grid}
+  .dk-modal-box{
+    width:100%;max-width:440px;background:var(--dk-panel);
+    border:1px solid #3a3f57;border-radius:16px;padding:26px;position:relative;
+    box-shadow:var(--dk-shadow);animation:dkPop .24s ease;
+  }
+  @keyframes dkPop{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
+  .dk-modal-box h3{font-size:17px;font-weight:800;margin-bottom:14px}
+  .dk-modal-box input,.dk-modal-box textarea{
+    width:100%;background:#0f1119;border:1px solid var(--dk-line);border-radius:9px;
+    padding:10px 13px;color:#fff;font-size:13.5px;margin-bottom:11px;outline:none;font-family:inherit;
+  }
+  .dk-modal-box textarea{resize:vertical;min-height:90px}
+  .dk-modal-box input:focus,.dk-modal-box textarea:focus{border-color:var(--dk-red)}
+  .dk-modal-box .dk-btn-primary{width:100%;justify-content:center;margin-top:4px}
+  .dk-modal-close{
+    position:absolute;right:14px;top:12px;font-size:22px;color:var(--dk-sub);
+    width:30px;height:30px;border-radius:8px;display:grid;place-items:center;transition:.2s;
+  }
+  .dk-modal-close:hover{background:#242838;color:#fff}
+  .dk-modal-tip{font-size:12px;color:var(--dk-sub);margin-top:10px;line-height:1.6}
+
+  /* ===== 响应式 ===== */
+  @media(max-width:1024px){
+    .dk-hero-grid{grid-template-columns:1fr;gap:38px;padding:48px 0}
+    .dk-focus-grid{grid-template-columns:1fr}
+    .dk-focus-side{grid-template-rows:none;grid-template-columns:1fr 1fr}
+    .dk-video-grid{grid-template-columns:repeat(2,1fr)}
+    .dk-topic-grid{grid-template-columns:repeat(2,1fr)}
+    .dk-creator-grid{grid-template-columns:repeat(2,1fr)}
+    .dk-review-grid{grid-template-columns:repeat(2,1fr)}
+    .dk-deep-grid{grid-template-columns:1fr;gap:26px}
+    .dk-side-card{position:static}
+    .dk-footer-top{grid-template-columns:1fr 1fr}
+    .dk-search{min-width:190px}
+    .dk-nav a{padding:7px 9px;font-size:13px}
+  }
+  @media(max-width:820px){
+    .dk-nav{display:none}
+    .dk-burger{display:grid}
+    .dk-search{display:none}
+    .dk-header .dk-wrap{justify-content:space-between}
+    .dk-notice-line{white-space:normal}
+  }
+  @media(max-width:680px){
+    .dk-section{padding:46px 0}
+    .dk-video-grid,.dk-topic-grid,.dk-creator-grid,.dk-review-grid,.dk-news-grid{grid-template-columns:1fr}
+    .dk-focus-side{grid-template-columns:1fr}
+    .dk-contact-grid{grid-template-columns:1fr}
+    .dk-wall{grid-template-columns:repeat(2,1fr)}
+    .dk-wall-item.big,.dk-wall-item.mid,.dk-wall-item.small{grid-column:span 1;grid-row:span 1}
+    .dk-hero-mini{display:none}
+    .dk-stats{gap:22px}
+    .dk-hero-cover-info h3{font-size:15px}
+    .dk-footer-top{grid-template-columns:1fr}
+    .dk-top-btn{right:14px;bottom:16px}
+    .dk-focus-sm{grid-template-columns:120px 1fr}
+  }
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ============ 吸顶：公告条 + 页头 ============ -->
+<div class="dk-sticky">
+  <div class="dk-notice">
+    <div class="dk-wrap">
+      <span class="dk-notice-tag">官方发布</span>
+      <span class="dk-notice-line">《黑兽2第二季》官方资料库新增 <b>第 12 章「暗誓之环」</b> 分镜设定解析，创作者联合企划「樱影重绘」报名通道开启至 12 月 8 日。</span>
+      <a class="dk-notice-more" href="#dk-news" data-dk-scroll>查看动态 →</a>
+    </div>
+  </div>
+  <header class="dk-header">
+    <div class="dk-wrap">
+      <a class="dk-brand" href="#dk-home" data-dk-scroll>
+        <span class="dk-brand-mark">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 44 L32 16 L44 44 Z" fill="#fff" opacity=".92"/><circle cx="32" cy="38" r="5" fill="#f2c14e"/></svg>
+        </span>
+        <span class="dk-brand-name">黑兽2第二季樱花动漫<small>SAKURA ANIME OFFICIAL</small></span>
+      </a>
+      <nav class="dk-nav" aria-label="主导航">
+        <a href="#dk-home" class="is-active" data-dk-scroll>首页</a>
+        <a href="#dk-focus" data-dk-scroll>焦点内容</a>
+        <a href="#dk-topics" data-dk-scroll>专题企划</a>
+        <a href="#dk-creators" data-dk-scroll>创作者</a>
+        <a href="#dk-news" data-dk-scroll>企业动态</a>
+        <a href="#dk-faq" data-dk-scroll>帮助</a>
+        <a href="#dk-contact" data-dk-scroll>联系</a>
+      </nav>
+      <div class="dk-search" id="dkSearchBox">
+        <input type="text" id="dkSearchInput" placeholder="搜索角色、设定、创作者…" aria-label="站内搜索">
+        <button class="dk-search-btn" id="dkSearchBtn" aria-label="搜索">
+          <svg viewBox="0 0 24 24"><path d="M10 2a8 8 0 105.29 14.03l5.34 5.33 1.41-1.41-5.33-5.34A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg>
+        </button>
+      </div>
+      <button class="dk-burger" id="dkBurger" aria-label="展开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <nav class="dk-mobile-nav" id="dkMobileNav" aria-label="移动端导航">
+    <a href="#dk-home" data-dk-scroll>首页</a>
+    <a href="#dk-focus" data-dk-scroll>焦点内容</a>
+    <a href="#dk-topics" data-dk-scroll>专题企划</a>
+    <a href="#dk-creators" data-dk-scroll>创作者</a>
+    <a href="#dk-news" data-dk-scroll>企业动态</a>
+    <a href="#dk-faq" data-dk-scroll>帮助</a>
+    <a href="#dk-contact" data-dk-scroll>联系</a>
+    <a href="#dk-submit" data-dk-scroll>投稿入口</a>
+  </nav>
+</div>
+
+<!-- ============ 首屏 ============ -->
+<section class="dk-hero dk-anchor" id="dk-home">
+  <div class="dk-wrap">
+    <div class="dk-hero-grid">
+      <div>
+        <span class="dk-pill"><i></i>官方网站 · 官方正版企划 · 持续运营中</span>
+        <h1><span>黑兽2第二季樱花动漫</span></h1>
+        <p class="dk-hero-sub">暗黑奇幻动画品牌的深度内容阵地</p>
+        <p class="dk-hero-desc">
+          作为「黑兽2第二季樱花动漫」<b>官方网站</b>，我们围绕这部作品的设定体系、角色关系与世界观，构建一个专注暗黑奇幻美学的高品质内容社区。平台聚合官方发布的原作档案、分镜手记、深度解析与创作者二创企划，让每一位观众在正版内容之外，还能看见作品背后的创作逻辑与情感脉络。<b>企业级内容生态</b>、<b>专业编辑团队</b>与持续运营的社区规则，是我们对品质与口碑的长期承诺。
+        </p>
+        <div class="dk-stats">
+          <div class="dk-stat"><b data-dk-count="128">128</b><em>+</em><span>官方设定档案</span></div>
+          <div class="dk-stat"><b data-dk-count="46">46</b><em>位</em><span>签约创作者</span></div>
+          <div class="dk-stat"><b data-dk-count="92">92</b><em>万</em><span>社区同好聚集</span></div>
+        </div>
+        <div class="dk-cta">
+          <a class="dk-btn dk-btn-primary" href="#dk-focus" data-dk-scroll>进入焦点内容
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <button class="dk-btn dk-btn-ghost" id="dkShareTop">分享本站</button>
+          <a class="dk-btn dk-btn-ghost" href="#dk-submit" data-dk-scroll>作品投稿</a>
+        </div>
+      </div>
+      <div class="dk-hero-visual">
+        <div class="dk-hero-cover">
+          <span class="dk-hero-cover-badge">官方主视觉</span>
+          <svg viewBox="0 0 800 500" role="img" aria-label="黑兽2第二季樱花动漫官方主视觉：暗红天幕下的巨兽剪影与樱花飘落">
+            <defs>
+              <linearGradient id="dkH1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#221420"/><stop offset=".55" stop-color="#3b1d22"/><stop offset="1" stop-color="#120d14"/>
+              </linearGradient>
+              <radialGradient id="dkH2" cx=".45" cy=".42" r=".55">
+                <stop offset="0" stop-color="#ff8a5c" stop-opacity=".85"/><stop offset="1" stop-color="#ff8a5c" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="dkH3" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#e8543f"/><stop offset="1" stop-color="#7c1f18"/>
+              </linearGradient>
+            </defs>
+            <rect width="800" height="500" fill="url(#dkH1)"/>
+            <circle cx="360" cy="210" r="210" fill="url(#dkH2)"/>
+            <path d="M0 400 L120 330 L230 372 L340 300 L470 360 L610 296 L730 350 L800 320 L800 500 L0 500 Z" fill="#150f16"/>
+            <path d="M300 400 L400 200 L500 400 Z" fill="#0c0a0e" opacity=".92"/>
+            <path d="M330 400 L400 258 L470 400 Z" fill="#1b1119"/>
+            <circle cx="400" cy="330" r="17" fill="#f2c14e" opacity=".9"/>
+            <circle cx="400" cy="330" r="34" fill="none" stroke="#f2c14e" stroke-opacity=".32" stroke-width="2"/>
+            <g fill="#ffb9ab" opacity=".8">
+              <circle cx="150" cy="120" r="4"/><circle cx="220" cy="190" r="3"/><circle cx="640" cy="140" r="4"/>
+              <circle cx="700" cy="240" r="3"/><circle cx="560" cy="90" r="3"/><circle cx="90" cy="250" r="2.6"/>
+              <circle cx="740" cy="330" r="3.4"/><circle cx="480" cy="140" r="2.6"/>
+            </g>
+            <g stroke="#e8543f" stroke-opacity=".4" stroke-width="1.4" fill="none">
+              <path d="M60 440 Q200 380 340 430 T640 420"/><path d="M40 470 Q220 420 400 460 T760 450"/>
+            </g>
+          </svg>
+          <div class="dk-hero-cover-info">
+            <h3>《黑兽2第二季》世界观总览</h3>
+            <p>官方编辑部 · 第 12 章设定同步更新</p>
+          </div>
+        </div>
+        <div class="dk-hero-mini">
+          <svg viewBox="0 0 400 250" role="img" aria-label="黑兽2第二季樱花动漫角色群像小封面：三枚角色剪影">
+            <defs><linearGradient id="dkM1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a1a2c"/><stop offset="1" stop-color="#0f0b12"/></linearGradient></defs>
+            <rect width="400" height="250" fill="url(#dkM1)"/>
+            <circle cx="90" cy="150" r="46" fill="#e8543f" opacity=".55"/>
+            <circle cx="200" cy="140" r="52" fill="#f2c14e" opacity=".5"/>
+            <circle cx="312" cy="152" r="44" fill="#4fd1c5" opacity=".45"/>
+            <path d="M0 220 Q100 190 200 214 T400 200 L400 250 L0 250 Z" fill="#08070b"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 焦点内容 ============ -->
+<section class="dk-section dk-anchor" id="dk-focus">
+  <div class="dk-wrap">
+    <div class="dk-sec-head">
+      <div class="dk-sec-kicker">Featured Focus</div>
+      <h2>焦点内容 · 本周官方精品推荐</h2>
+      <p>由官方编辑团队与资深创作者共同筛选，围绕黑兽2第二季樱花动漫的世界观、角色弧光与影像语言，呈现值得反复观看的深度内容。</p>
+    </div>
+    <div class="dk-focus-grid">
+      <article class="dk-focus-main">
+        <div class="dk-cover">
+          <svg viewBox="0 0 800 450" role="img" aria-label="焦点封面：暗誓之环章节的巨兽与环形结界插画">
+            <defs>
+              <linearGradient id="dkF1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d1420"/><stop offset="1" stop-color="#090a10"/></linearGradient>
+              <radialGradient id="dkF2" cx=".5" cy=".5" r=".5"><stop offset=".55" stop-color="#e8543f" stop-opacity="0"/><stop offset="1" stop-color="#e8543f" stop-opacity=".55"/></radialGradient>
+            </defs>
+            <rect width="800" height="450" fill="url(#dkF1)"/>
+            <circle cx="400" cy="225" r="176" fill="none" stroke="#e8543f" stroke-width="2" stroke-dasharray="9 7" opacity=".7"/>
+            <circle cx="400" cy="225" r="128" fill="none" stroke="#f2c14e" stroke-width="1.4" opacity=".5"/>
+            <circle cx="400" cy="225" r="60" fill="url(#dkF2)"/>
+            <path d="M400 152 L448 300 L352 300 Z" fill="#120d14"/>
+            <circle cx="400" cy="252" r="15" fill="#f2c14e"/>
+            <g fill="#ffb9ab" opacity=".7">
+              <circle cx="140" cy="90" r="3"/><circle cx="640" cy="110" r="3.6"/><circle cx="700" cy="330" r="3"/>
+              <circle cx="110" cy="350" r="3.2"/><circle cx="560" cy="60" r="2.6"/>
+            </g>
+            <path d="M0 420 Q200 370 400 404 T800 388 L800 450 L0 450 Z" fill="#07060a"/>
+          </svg>
+        </div>
+        <div class="dk-focus-main-body">
+          <div class="dk-meta-row">
+            <span class="dk-tag">官方解析</span>
+            <span class="dk-tag">世界观</span>
+            <span>官方编辑部</span><span>·</span><span>42 分钟深度内容</span>
+          </div>
+          <h3>「暗誓之环」全解：黑兽2第二季的力量契约与代价结构</h3>
+          <p>本章是第二季叙事结构的真正转折点。我们从契约符文的三重层次出发，拆解角色为何在做出选择后性格发生偏移，并对照官方美术设定集中的分镜草稿，还原创作者在画面留白与光影压暗上的意图。</p>
+        </div>
+      </article>
+      <div class="dk-focus-side">
+        <article class="dk-focus-sm">
+          <div class="dk-cover">
+            <svg viewBox="0 0 400 250" role="img" aria-label="小封面：角色群像剪影与冷色月光">
+              <defs><linearGradient id="dkF3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#141a26"/><stop offset="1" stop-color="#07080d"/></linearGradient></defs>
+              <rect width="400" height="250" fill="url(#dkF3)"/>
+              <circle cx="320" cy="60" r="34" fill="#d8e4ff" opacity=".22"/>
+              <circle cx="320" cy="60" r="18" fill="#d8e4ff" opacity=".5"/>
+              <path d="M60 250 L110 120 L160 250 Z" fill="#0b0d14"/>
+              <path d="M150 250 L205 100 L260 250 Z" fill="#121620"/>
+              <path d="M250 250 L300 140 L350 250 Z" fill="#0b0d14"/>
+            </svg>
+          </div>
+          <div class="dk-focus-sm-body">
+            <h4>角色访谈：配音演员谈「沉默的三分钟」</h4>
+            <div class="dk-meta-row"><span>人物访谈</span><span>·</span><span>18 分钟</span></div>
+          </div>
+        </article>
+        <article class="dk-focus-sm">
+          <div class="dk-cover">
+            <svg viewBox="0 0 400 250" role="img" aria-label="小封面：手绘分镜草稿与铅笔线条">
+              <rect width="400" height="250" fill="#1c1913"/>
+              <g stroke="#c9b58a" stroke-width="1.6" opacity=".55" fill="none">
+                <rect x="24" y="26" width="160" height="94" rx="4"/><rect x="212" y="26" width="160" height="94" rx="4"/>
+                <rect x="24" y="140" width="160" height="84" rx="4"/><rect x="212" y="140" width="160" height="84" rx="4"/>
+                <path d="M44 100 L96 52 L140 92"/><circle cx="290" cy="72" r="22"/><path d="M240 108 L330 52"/>
+              </g>
+              <circle cx="380" cy="230" r="5" fill="#e8543f"/>
+            </svg>
+          </div>
+          <div class="dk-focus-sm-body">
+            <h4>分镜手记：一集动画里被删掉的六个镜头</h4>
+            <div class="dk-meta-row"><span>创作幕后</span><span>·</span><span>25 分钟</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 热门视频流 ============ -->
+<section class="dk-section alt dk-anchor" id="dk-videos">
+  <div class="dk-wrap">
+    <div class="dk-sec-head">
+      <div class="dk-sec-kicker">Trending Videos</div>
+      <h2>热门影像 · 社区高互动内容</h2>
+      <p>黑兽2第二季樱花动漫的社区以「细节党」著称。以下内容来自官方发布与创作者投稿，覆盖设定考据、影像美学、情感解读等多个方向。</p>
+    </div>
+    <div class="dk-video-grid" id="dkVideoGrid">
+
+      <article class="dk-vcard" data-dk-card="暗纹考据">
+        <div class="dk-cover">
+          <svg viewBox="0 0 480 270" role="img" aria-label="黑兽2第二季樱花动漫封面：暗红纹章与几何符文层叠">
+            <defs><linearGradient id="dkV1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b1218"/><stop offset="1" stop-color="#0c090d"/></linearGradient></defs>
+            <rect width="480" height="270" fill="url(#dkV1)"/>
+            <g stroke="#e8543f" fill="none" opacity=".75">
+              <circle cx="240" cy="135" r="86" stroke-width="1.6"/>
+              <circle cx="240" cy="135" r="60" stroke-width="1" stroke-dasharray="6 6"/>
+              <path d="M240 49 L296 168 L184 168 Z" stroke-width="1.8"/>
+            </g>
+            <circle cx="240" cy="135" r="9" fill="#f2c14e"/>
+            <path d="M0 232 Q120 210 240 226 T480 216 L480 270 L0 270 Z" fill="#07060a"/>
+          </svg>
+          <div class="dk-play"><i><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i></div>
+        </div>
+        <div class="dk-vcard-body">
+          <h3>十二枚暗纹的排列顺序，藏着第二季的时间线</h3>
+          <p>逐帧比对三处关键场景中的纹章方位，发现纹样随角色立场变化而旋转。</p>
+          <div class="dk-meta-row"><span class="dk-tag">设定考据</span><span class="dk-tag">细节</span></div>
+          <div class="dk-vcard-foot">
+            <span class="dk-avatar" style="background:linear-gradient(135deg,#e8543f,#8c2318)">纹</span>
+            <span class="dk-author">纹章研究所</span>
+            <div class="dk-actions">
+              <button class="dk-act" data-dk-like aria-label="点赞"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.3-8.4C1.1 8.5 2.6 5 6 5c2 0 3.3 1.1 4 2 .7-.9 2-2 4-2 3.4 0 4.9 3.5 3.3 6.6C19 15.6 12 20 12 20z"/></svg><span data-dk-like-num>3241</span></button>
+              <button class="dk-act" data-dk-save aria-label="收藏"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dk-vcard" data-dk-card="美学">
+        <div class="dk-cover">
+          <svg viewBox="0 0 480 270" role="img" aria-label="黑兽2第二季樱花动漫封面：粉紫樱花与冷蓝夜空的色彩对比">
+            <defs><linearGradient id="dkV2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#241a33"/><stop offset="1" stop-color="#0d0b14"/></linearGradient></defs>
+            <rect width="480" height="270" fill="url(#dkV2)"/>
+            <g fill="#ffb8d0" opacity=".85">
+              <circle cx="90" cy="70" r="5"/><circle cx="130" cy="40" r="3.4"/><circle cx="200" cy="80" r="4.4"/>
+              <circle cx="300" cy="46" r="3.6"/><circle cx="380" cy="90" r="5"/><circle cx="430" cy="52" r="3.2"/>
+              <circle cx="60" cy="150" r="3.8"/><circle cx="160" cy="160" r="3"/><circle cx="410" cy="170" r="4"/>
+            </g>
+            <path d="M0 200 Q140 168 280 196 T480 180 L480 270 L0 270 Z" fill="#0a0810"/>
+            <path d="M150 270 Q240 150 330 270 Z" fill="#1a1426" opacity=".9"/>
+            <circle cx="240" cy="120" r="40" fill="none" stroke="#8f7bd6" stroke-opacity=".55" stroke-width="1.4"/>
+          </svg>
+          <div class="dk-play"><i><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i></div>
+        </div>
+        <div class="dk-vcard-body">
+          <h3>粉与暗的对撞：第二季色彩设计的三条铁律</h3>
+          <p>美术监督的用色逻辑并非随意，每一次粉调出现都对应角色情绪的临界点。</p>
+          <div class="dk-meta-row"><span class="dk-tag">艺术美学</span><span class="dk-tag">色彩</span></div>
+          <div class="dk-vcard-foot">
+            <span class="dk-avatar" style="background:linear-gradient(135deg,#8f7bd6,#3f2e6b)">色</span>
+            <span class="dk-author">夜色调色台</span>
+            <div class="dk-actions">
+              <button class="dk-act" data-dk-like aria-label="点赞"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.3-8.4C1.1 8.5 2.6 5 6 5c2 0 3.3 1.1 4 2 .7-.9 2-2 4-2 3.4 0 4.9 3.5 3.3 6.6C19 15.6 12 20 12 20z"/></svg><span data-dk-like-num>2188</span></button>
+              <button class="dk-act" data-dk-save aria-label="收藏"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dk-vcard" data-dk-card="情感解读">
+        <div class="dk-cover">
+          <svg viewBox="0 0 480 270" role="img" aria-label="黑兽2第二季樱花动漫封面：雨幕中的两个背向人影">
+            <defs><linearGradient id="dkV3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#152230"/><stop offset="1" stop-color="#0a0e14"/></linearGradient></defs>
+            <rect width="480" height="270" fill="url(#dkV3)"/>
+            <g stroke="#5fa8c9" stroke-opacity=".35" stroke-width="1.2">
+              <path d="M40 0 L30 60M110 0 L100 70M180 0 L170 55M250 0 L240 66M320 0 L310 58M390 0 L380 72M450 0 L440 60"/>
+              <path d="M70 100 L60 160M140 110 L130 170M210 100 L200 158M280 112 L270 172M350 100 L340 160M420 110 L410 168"/>
+            </g>
+            <circle cx="185" cy="176" r="19" fill="#e8543f" opacity=".75"/>
+            <circle cx="300" cy="176" r="19" fill="#4fd1c5" opacity=".6"/>
+            <path d="M0 224 Q160 200 320 218 T480 206 L480 270 L0 270 Z" fill="#070a0f"/>
+          </svg>
+          <div class="dk-play"><i><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i></div>
+        </div>
+        <div class="dk-vcard-body">
+          <h3>他们为什么背过身去：一段被误读的告别戏</h3>
+          <p>不少观众把这场雨戏当作决裂，但台词停顿的节奏其实给出了另一种答案。</p>
+          <div class="dk-meta-row"><span class="dk-tag">情感故事</span><span class="dk-tag">解读</span></div>
+          <div class="dk-vcard-foot">
+            <span class="dk-avatar" style="background:linear-gradient(135deg,#4fd1c5,#1c6b64)">雨</span>
+            <span class="dk-author">雨落第二幕</span>
+            <div class="dk-actions">
+              <button class="dk-act" data-dk-like aria-label="点赞"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.3-8.4C1.1 8.5 2.6 5 6 5c2 0 3.3 1.1 4 2 .7-.9 2-2 4-2 3.4 0 4.9 3.5 3.3 6.6C19 15.6 12 20 12 20z"/></svg><span data-dk-like-num>5762</span></button>
+              <button class="dk-act" data-dk-save aria-label="收藏"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dk-vcard" data-dk-card="剪辑教学">
+        <div class="dk-cover">
+          <svg viewBox="0 0 480 270" role="img" aria-label="黑兽2第二季樱花动漫封面：时间轴胶片与波形剪辑界面">
+            <rect width="480" height="270" fill="#11151b"/>
+            <g fill="#1e2634"><rect x="0" y="0" width="480" height="42"/><rect x="0" y="228" width="480" height="42"/></g>
+            <g stroke="#3b465c" stroke-width="1"><path d="M0 60 H480M0 210 H480"/></g>
+            <g fill="#e8543f" opacity=".85"><rect x="40" y="86" width="90" height="34" rx="4"/><rect x="150" y="86" width="60" height="34" rx="4" opacity=".55"/><rect x="230" y="86" width="130" height="34" rx="4" opacity=".7"/></g>
+            <g fill="#4fd1c5" opacity=".7"><rect x="40" y="134" width="60" height="26" rx="4"/><rect x="120" y="134" width="150" height="26" rx="4" opacity=".55"/><rect x="290" y="134" width="90" height="26" rx="4" opacity=".75"/></g>
+            <g stroke="#f2c14e" stroke-width="1.4" fill="none" opacity=".8">
+              <path d="M40 188 l16 -14 16 22 16 -26 16 18 16 -10 16 20 16 -22 16 12"/>
+            </g>
+          </svg>
+          <div class="dk-play"><i><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i></div>
+        </div>
+        <div class="dk-vcard-body">
+          <h3>把一场战斗剪出呼吸感：节奏控制实操教程</h3>
+          <p>从镜头长度配比到静帧插入时机，一套可直接套用的剪辑思路拆解。</p>
+          <div class="dk-meta-row"><span class="dk-tag">教程干货</span><span class="dk-tag">剪辑</span></div>
+          <div class="dk-vcard-foot">
+            <span class="dk-avatar" style="background:linear-gradient(135deg,#f2c14e,#8a6410);color:#2b1d00">剪</span>
+            <span class="dk-author">剪刀与帧</span>
+            <div class="dk-actions">
+              <button class="dk-act" data-dk-like aria-label="点赞"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.3-8.4C1.1 8.5 2.6 5 6 5c2 0 3.3 1.1 4 2 .7-.9 2-2 4-2 3.4 0 4.9 3.5 3.3 6.6C19 15.6 12 20 12 20z"/></svg><span data-dk-like-num>1893</span></button>
+              <button class="dk-act" data-dk-save aria-label="收藏"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dk-vcard" data-dk-card="城市探索">
+        <div class="dk-cover">
+          <svg viewBox="0 0 480 270" role="img" aria-label="黑兽2第二季樱花动漫封面：夜色城市天际线与樱花灯影">
+            <defs><linearGradient id="dkV4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101b2b"/><stop offset="1" stop-color="#07090f"/></linearGradient></defs>
+            <rect width="480" height="270" fill="url(#dkV4)"/>
+            <g fill="#16202f">
+              <rect x="20" y="130" width="48" height="140"/><rect x="82" y="96" width="40" height="174"/>
+              <rect x="136" y="150" width="58" height="120"/><rect x="208" y="80" width="44" height="190"/>
+              <rect x="266" y="140" width="52" height="130"/><rect x="332" y="104" width="46" height="166"/>
+              <rect x="392" y="156" width="62" height="114"/>
+            </g>
+            <g fill="#f2c14e" opacity=".8">
+              <rect x="30" y="146" width="7" height="7"/><rect x="52" y="172" width="7" height="7"/>
+              <rect x="92" y="118" width="7" height="7"/><rect x="104" y="152" width="7" height="7"/>
+              <rect x="222" y="102" width="7" height="7"/><rect x="240" y="140" width="7" height="7"/>
+              <rect x="344" y="128" width="7" height="7"/><rect x="412" y="176" width="7" height="7"/>
+            </g>
+            <g fill="#ffb8d0" opacity=".7"><circle cx="70" cy="60" r="4"/><circle cx="180" cy="46" r="3"/><circle cx="300" cy="62" r="4.4"/><circle cx="420" cy="44" r="3.2"/></g>
+          </svg>
+          <div class="dk-play"><i><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i></div>
+        </div>
+        <div class="dk-vcard-body">
+          <h3>在现实里寻找「黑兽」取景地：一次夜行记录</h3>
+          <p>带着设定集走进城市的夜晚，对比动画中七处似曾相识的街景与光源。</p>
+          <div class="dk-meta-row"><span class="dk-tag">城市探索</span><span class="dk-tag">影像</span></div>
+          <div class="dk-vcard-foot">
+            <span class="dk-avatar" style="background:linear-gradient(135deg,#5fa8c9,#245a75)">城</span>
+            <span class="dk-author">夜行记录者</span>
+            <div class="dk-actions">
+              <button class="dk-act" data-dk-like aria-label="点赞"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.3-8.4C1.1 8.5 2.6 5 6 5c2 0 3.3 1.1 4 2 .7-.9 2-2 4-2 3.4 0 4.9 3.5 3.3 6.6C19 15.6 12 20 12 20z"/></svg><span data-dk-like-num>2431</span></button>
+              <button class="dk-act" data-dk-save aria-label="收藏"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dk-vcard" data-dk-card="原作考据">
+        <div class="dk-cover">
+          <svg viewBox="0 0 480 270" role="img" aria-label="黑兽2第二季樱花动漫封面：摊开的书页与朱红批注">
+            <rect width="480" height="270" fill="#1a1712"/>
+            <path d="M40 40 H240 V230 H40 Z" fill="#26221b"/>
+            <path d="M240 40 H440 V230 H240 Z" fill="#221e18"/>
+            <g stroke="#5b5346" stroke-width="1.2" opacity=".8">
+              <path d="M62 70 H216M62 92 H216M62 114 H200M62 136 H216M62 158 H180M62 180 H212M62 202 H196"/>
+              <path d="M262 70 H416M262 92 H400M262 114 H416M262 136 H392M262 158 H408M262 180 H370"/>
+            </g>
+            <path d="M240 40 V230" stroke="#3a342a" stroke-width="2"/>
+            <g stroke="#e8543f" stroke-width="1.6" fill="none" opacity=".9">
+              <path d="M120 106 Q160 96 196 110"/><path d="M300 148 Q340 138 380 152"/>
+            </g>
+            <circle cx="100" cy="146" r="4" fill="#f2c14e"/>
+          </svg>
+          <div class="dk-play"><i><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i></div>
+        </div>
+        <div class="dk-vcard-body">
+          <h3>原作与动画的七个差异：哪些改编真正成立</h3>
+          <p>从叙事顺序到角色动机，逐条对照原作文本与动画呈现，给出取舍分析。</p>
+          <div class="dk-meta-row"><span class="dk-tag">深度测评</span><span class="dk-tag">对照</span></div>
+          <div class="dk-vcard-foot">
+            <span class="dk-avatar" style="background:linear-gradient(135deg,#c9b58a,#6b5c3a);color:#241d0e">阅</span>
+            <span class="dk-author">文本考古组</span>
+            <div class="dk-actions">
+              <button class="dk-act" data-dk-like aria-label="点赞"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.3-8.4C1.1 8.5 2.6 5 6 5c2 0 3.3 1.1 4 2 .7-.9 2-2 4-2 3.4 0 4.9 3.5 3.3 6.6C19 15.6 12 20 12 20z"/></svg><span data-dk-like-num>4107</span></button>
+              <button class="dk-act" data-dk-save aria-label="收藏"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 专题企划 ============ -->
+<section class="dk-section dk-anchor" id="dk-topics">
+  <div class="dk-wrap">
+    <div class="dk-sec-head">
+      <div class="dk-sec-kicker">Special Project</div>
+      <h2>专题企划 · 官方发布与联合创作</h2>
+      <p>围绕黑兽2第二季樱花动漫，我们持续发起主题企划、重绘挑战与同好投票。企划由官方发布规则，创作者参与，社区共同见证。</p>
+    </div>
+    <div class="dk-topic-grid">
+      <article class="dk-topic">
+        <svg viewBox="0 0 400 260" role="img" aria-label="专题封面：樱影重绘企划的粉色樱花与画架">
+          <rect width="400" height="260" fill="#2a1a2b"/>
+          <circle cx="200" cy="110" r="72" fill="#ffb8d0" opacity=".22"/>
+          <path d="M120 210 L200 96 L280 210 Z" fill="none" stroke="#ffb8d0" stroke-width="2" opacity=".8"/>
+          <rect x="176" y="130" width="48" height="60" fill="#1a1020" stroke="#ffb8d0" stroke-opacity=".5"/>
+          <g fill="#ffb8d0" opacity=".8"><circle cx="70" cy="56" r="4"/><circle cx="330" cy="72" r="4"/><circle cx="300" cy="200" r="3"/></g>
+        </svg>
+        <span class="dk-topic-state">报名中 · 12/08 截止</span>
+        <h3>企划「樱影重绘」</h3>
+        <p>以第二季第 9 话为命题，用你自己的影像语言重绘那场樱下的对峙，优秀作品将获官方推荐位。</p>
+      </article>
+      <article class="dk-topic">
+        <svg viewBox="0 0 400 260" role="img" aria-label="专题封面：暗色档案柜与编号卡片的设定档案企划">
+          <rect width="400" height="260" fill="#141821"/>
+          <g fill="#1e2532" stroke="#39445a" stroke-width="1.2">
+            <rect x="60" y="40" width="280" height="44" rx="3"/><rect x="60" y="98" width="280" height="44" rx="3"/>
+            <rect x="60" y="156" width="280" height="44" rx="3"/>
+          </g>
+          <g fill="#f2c14e" opacity=".85"><rect x="82" y="56" width="34" height="12" rx="2"/><rect x="82" y="114" width="34" height="12" rx="2"/><rect x="82" y="172" width="34" height="12" rx="2"/></g>
+          <circle cx="300" cy="74" r="5" fill="#e8543f"/><circle cx="300" cy="132" r="5" fill="#e8543f" opacity=".6"/>
+        </svg>
+        <span class="dk-topic-state done">已完结 · 档案开放</span>
+        <h3>企划「黑兽档案室」</h3>
+        <p>官方整理的十二份设定档案，从角色年表到地域志，一次看懂第二季的世界构造。</p>
+      </article>
+      <article class="dk-topic">
+        <svg viewBox="0 0 400 260" role="img" aria-label="专题封面：同好投票企划的多彩票根与对话框">
+          <rect width="400" height="260" fill="#101820"/>
+          <g>
+            <rect x="46" y="60" width="96" height="56" rx="8" fill="#e8543f" opacity=".85"/>
+            <rect x="166" y="92" width="96" height="56" rx="8" fill="#4fd1c5" opacity=".7"/>
+            <rect x="258" y="52" width="96" height="56" rx="8" fill="#f2c14e" opacity=".8"/>
+            <rect x="100" y="166" width="96" height="48" rx="8" fill="#8f7bd6" opacity=".7"/>
+            <rect x="214" y="176" width="112" height="44" rx="8" fill="#2a3446"/>
+          </g>
+          <circle cx="90" cy="88" r="6" fill="#fff" opacity=".8"/>
+        </svg>
+        <span class="dk-topic-state">投票中</span>
+        <h3>企划「最难忘的一幕」</h3>
+        <p>由社区投票选出第二季最被记住的瞬间，票选结果将用于年末特别影像合辑。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 创作者矩阵 ============ -->
+<section class="dk-section alt dk-anchor" id="dk-creators">
+  <div class="dk-wrap">
+    <div class="dk-sec-head">
+      <div class="dk-sec-kicker">Creators</div>
+      <h2>创作者矩阵 · 内容生态的骨干力量</h2>
+      <p>黑兽2第二季樱花动漫的社区生态由一批长期深耕的创作者支撑。他们来自动画考据、剪辑、插画、文本分析等不同领域，为品牌注入持续的内容活力。</p>
+    </div>
+    <div class="dk-creator-grid">
+      <article class="dk-creator">
+        <div class="dk-creator-avatar" style="background:linear-gradient(135deg,#e8543f,#8c2318)">纹</div>
+        <h3>纹章研究所</h3>
+        <div class="dk-field">设定考据 / 符号学</div>
+        <p>专注暗纹与契约符文的排列逻辑，主张「每一处纹样都有叙事功能」，已发布 37 篇考据长文。</p>
+        <div class="dk-creator-data">
+          <div><b>86</b>作品</div><div><b>12.4万</b>关注</div>
+        </div>
+        <button class="dk-creator-btn" data-dk-author="纹章研究所">查看档案</button>
+      </article>
+      <article class="dk-creator">
+        <div class="dk-creator-avatar" style="background:linear-gradient(135deg,#8f7bd6,#3f2e6b)">色</div>
+        <h3>夜色调色台</h3>
+        <div class="dk-field">色彩设计 / 影像美学</div>
+        <p>从美术监督的色板出发，逐集拆解光影结构，擅长用对比图讲清一个镜头的情绪来源。</p>
+        <div class="dk-creator-data">
+          <div><b>54</b>作品</div><div><b>9.8万</b>关注</div>
+        </div>
+        <button class="dk-creator-btn" data-dk-author="夜色调色台">查看档案</button>
+      </article>
+      <article class="dk-creator">
+        <div class="dk-creator-avatar" style="background:linear-gradient(135deg,#f2c14e,#8a6410);color:#2b1d00">剪</div>
+        <h3>剪刀与帧</h3>
+        <div class="dk-field">剪辑教学 / 节奏分析</div>
+        <p>十年剪辑经验，把复杂技法拆成可执行步骤，是社区新人最常推荐的入门向导。</p>
+        <div class="dk-creator-data">
+          <div><b>72</b>作品</div><div><b>15.1万</b>关注</div>
+        </div>
+        <button class="dk-creator-btn" data-dk-author="剪刀与帧">查看档案</button>
+      </article>
+      <article class="dk-creator">
+        <div class="dk-creator-avatar" style="background:linear-gradient(135deg,#4fd1c5,#1c6b64);color:#052a27">雨</div>
+        <h3>雨落第二幕</h3>
+        <div class="dk-field">情感解读 / 文本细读</div>
+        <p>擅长从一句台词的停顿里读出人物的犹豫，文字克制，被社区称为「最会等一个镜头的作者」。</p>
+        <div class="dk-creator-data">
+          <div><b>41</b>作品</div><div><b>7.6万</b>关注</div>
+        </div>
+        <button class="dk-creator-btn" data-dk-author="雨落第二幕">查看档案</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 作品墙 ============ -->
+<section class="dk-section dk-anchor" id="dk-wall">
+  <div class="dk-wrap">
+    <div class="dk-sec-head">
+      <div class="dk-sec-kicker">Image Wall</div>
+      <h2>影像作品墙 · 同好共创精选</h2>
+      <p>来自社区创作者的原创视觉作品。每一张都标注了作者与主题，欢迎在遵守社区规范的前提下继续创作与分享。</p>
+    </div>
+    <div class="dk-wall">
+      <div class="dk-wall-item big">
+        <svg viewBox="0 0 600 400" role="img" aria-label="作品墙大图：樱花雨中的巨大兽影与红色符文">
+          <defs><linearGradient id="dkW1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#241626"/><stop offset="1" stop-color="#0a0810"/></linearGradient></defs>
+          <rect width="600" height="400" fill="url(#dkW1)"/>
+          <circle cx="300" cy="210" r="120" fill="#e8543f" opacity=".16"/>
+          <path d="M230 340 L300 130 L370 340 Z" fill="#0d0a11"/>
+          <circle cx="300" cy="250" r="16" fill="#f2c14e"/>
+          <g fill="#ffb8d0" opacity=".8">
+            <circle cx="90" cy="80" r="5"/><circle cx="150" cy="150" r="4"/><circle cx="480" cy="100" r="5"/>
+            <circle cx="520" cy="220" r="4"/><circle cx="400" cy="60" r="3.4"/><circle cx="60" cy="260" r="4"/>
+          </g>
+          <path d="M0 360 Q150 330 300 352 T600 340 L600 400 L0 400 Z" fill="#06050a"/>
+        </svg>
+        <div class="dk-wall-cap">《樱下之誓》· 作者 墨灯</div>
+      </div>
+      <div class="dk-wall-item mid">
+        <svg viewBox="0 0 400 400" role="img" aria-label="作品墙中图：冷蓝调角色侧脸与碎光">
+          <rect width="400" height="400" fill="#0c1420"/>
+          <circle cx="300" cy="90" r="46" fill="#5fa8c9" opacity=".22"/>
+          <path d="M110 300 Q150 150 240 130 Q300 118 320 220 L280 320 Z" fill="#16202e"/>
+          <circle cx="236" cy="204" r="8" fill="#4fd1c5"/>
+          <g stroke="#5fa8c9" stroke-opacity=".4" stroke-width="1.4"><path d="M40 340 H360M40 360 H300"/></g>
+        </svg>
+        <div class="dk-wall-cap">《夜之侧脸》· 作者 青灰</div>
+      </div>
+      <div class="dk-wall-item small">
+        <svg viewBox="0 0 300 200" role="img" aria-label="作品墙小图：金色契约符号特写">
+          <rect width="300" height="200" fill="#1b170f"/>
+          <circle cx="150" cy="100" r="62" fill="none" stroke="#f2c14e" stroke-width="1.6" stroke-dasharray="7 6"/>
+          <circle cx="150" cy="100" r="30" fill="none" stroke="#f2c14e" stroke-opacity=".6"/>
+          <path d="M150 62 L176 130 L124 130 Z" fill="#f2c14e" opacity=".55"/>
+        </svg>
+        <div class="dk-wall-cap">《契约》· 默声</div>
+      </div>
+      <div class="dk-wall-item small">
+        <svg viewBox="0 0 300 200" role="img" aria-label="作品墙小图：粉紫渐变的樱花枝与飘落花瓣">
+          <rect width="300" height="200" fill="#26182b"/>
+          <path d="M30 180 Q120 120 200 156 T300 120" stroke="#8f7bd6" stroke-width="2" fill="none" opacity=".6"/>
+          <g fill="#ffb8d0" opacity=".9">
+            <circle cx="90" cy="70" r="6"/><circle cx="140" cy="110" r="5"/><circle cx="210" cy="60" r="6"/>
+            <circle cx="250" cy="140" r="4.6"/><circle cx="60" cy="140" r="4.2"/>
+          </g>
+        </svg>
+        <div class="dk-wall-cap">《花枝》· 栗子</div>
+      </div>
+      <div class="dk-wall-item small">
+        <svg viewBox="0 0 300 200" role="img" aria-label="作品墙小图：暗红与墨黑的抽象羽翼图形">
+          <rect width="300" height="200" fill="#160d10"/>
+          <path d="M70 160 Q140 40 250 66 Q190 100 156 160 Z" fill="#e8543f" opacity=".55"/>
+          <path d="M96 170 Q150 84 236 100 Q180 128 150 172 Z" fill="#8c2318" opacity=".8"/>
+        </svg>
+        <div class="dk-wall-cap">《羽》· 阿七</div>
+      </div>
+      <div class="dk-wall-item small">
+        <svg viewBox="0 0 300 200" role="img" aria-label="作品墙小图：青色月光下的水面与倒影">
+          <rect width="300" height="200" fill="#0a1620"/>
+          <circle cx="150" cy="60" r="26" fill="#4fd1c5" opacity=".45"/>
+          <path d="M0 120 H300" stroke="#2e5f68" stroke-width="1.4"/>
+          <g stroke="#4fd1c5" stroke-opacity=".35" stroke-width="2"><path d="M100 136 H200M120 152 H180M130 168 H170"/></g>
+        </svg>
+        <div class="dk-wall-cap">《倒影》· 川禾</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 深度解析 + 榜单 ============ -->
+<section class="dk-section alt dk-anchor" id="dk-deep">
+  <div class="dk-wrap">
+    <div class="dk-sec-head">
+      <div class="dk-sec-kicker">Deep Insight</div>
+      <h2>品牌深度解析 · 从名字说起</h2>
+      <p>为什么是「黑兽2第二季樱花动漫」？这个名称既标识作品，也标明了一种内容定位与社区气质。</p>
+    </div>
+    <div class="dk-deep-grid">
+      <div class="dk-article">
+        <h3>名称里的三层含义</h3>
+        <p>「黑兽2第二季樱花动漫」这个名称，第一眼听起来像是一个作品名，但对我们的编辑团队而言，它同时承载三层含义。其一是<b>作品定位</b>：暗黑奇幻题材中的持续性叙事，强调力量、契约与代价，这也决定了本站内容的基调偏向深度与考据。其二是<b>季播结构</b>：明确标注「第二季」，意味着内容并非一次性消费，而是持续展开的篇章，需要长期运营与同步更新。其三是<b>平台气质</b>：「樱花动漫」四个字带来柔性的视觉联想，与「黑兽」形成张力，这正是我们在视觉设计上选择暗色背景与暖色点缀的原因。</p>
+
+        <h3>为什么建立官方网站</h3>
+        <p>在信息碎片化的环境里，一个稳定的<b>官方网站</b>意味着可信的出处。我们整理官方发布的设定资料、创作者访谈与企划规则，避免二手转述带来的偏差。对于创作者而言，这里有清晰的投稿规范与版权说明；对于观众而言，这里有可追溯的内容来源与更新记录。我们坚持<b>原创</b>与<b>正版</b>立场，所有引用均标注出处，所有投稿均经过编辑审阅。这种看似笨拙的做法，恰恰是品牌口碑积累的方式。</p>
+
+        <h3>内容生态如何运转</h3>
+        <p>我们的内容生态由四类角色共同构成：官方编辑团队负责策划与把关，<b>企业</b>级内容标准保证了质量下限；签约创作者提供专业视角，是社区内容的中坚；普通投稿者带来新鲜表达，是活力的来源；而观众则通过点赞、收藏、评论与投票参与生态运转。每一次互动都会被计入作品的社区反馈，并影响后续推荐权重。我们相信，<b>内容生态</b>不是靠单一爆款支撑的，而是靠持续、稳定、可预期的更新节奏维持。</p>
+
+        <h3>我们如何看待「深度」</h3>
+        <p>在视频内容越来越短的当下，我们依然保留长文与长视频的位置。所谓深度，不是篇幅，而是对细节的尊重：一个镜头为什么停留三秒，一句台词为什么省掉主语，一枚纹样为什么旋转了九十度。这些问题的回答，构成了观看作品之外的第二种乐趣。我们的分析文章往往引用具体分镜与原文段落，力求让读者可以自行验证。这种<b>真实</b>的分析方式，也让社区逐渐形成了「有据可查」的表达习惯。</p>
+
+        <h3>社区规则与长期主义</h3>
+        <p>我们建立了较为完整的社区规范：禁止搬运他人作品、禁止未授权商用、禁止恶意引战。规则执行依靠编辑团队与创作者共同监督。我们并不追求用户规模的短期爆发，而更在意社区的<b>口碑</b>与可持续性。过去两年，我们见证了多位创作者从普通投稿者成长为签约作者，也见证了若干企划从提案走向落地。这种<b>成长</b>与<b>陪伴</b>，是「黑兽2第二季樱花动漫」作为品牌最看重的资产。</p>
+
+        <h3>关于未来的公开说明</h3>
+        <p>后续我们将继续围绕第二季的剩余篇章推出解析内容，并计划开放更多形式的创作者合作，包括联合企划、主题投稿季与线下同好交流。相关安排会通过企业动态栏与公告条第一时间<b>官方发布</b>。我们也会持续优化站内的搜索与筛选体验，让设定考据类内容更容易被检索。若你对本站有任何建议，欢迎通过联系模块反馈，我们会逐条阅读。</p>
+      </div>
+      <aside class="dk-side-card">
+        <h3>本周社区热度榜</h3>
+        <ul class="dk-rank-list">
+          <li><span class="dk-rank-num">1</span><span class="dk-rank-txt">他们为什么背过身去：一段被误读的告别戏<small>雨落第二幕 · 互动 5,762</small></span></li>
+          <li><span class="dk-rank-num">2</span><span class="dk-rank-txt">原作与动画的七个差异：哪些改编真正成立<small>文本考古组 · 互动 4,107</small></span></li>
+          <li><span class="dk-rank-num">3</span><span class="dk-rank-txt">十二枚暗纹的排列顺序，藏着第二季的时间线<small>纹章研究所 · 互动 3,241</small></span></li>
+          <li><span class="dk-rank-num">4</span><span class="dk-rank-txt">在现实里寻找「黑兽」取景地：一次夜行记录<small>夜行记录者 · 互动 2,431</small></span></li>
+          <li><span class="dk-rank-num">5</span><span class="dk-rank-txt">粉与暗的对撞：第二季色彩设计的三条铁律<small>夜色调色台 · 互动 2,188</small></span></li>
+          <li><span class="dk-rank-num">6</span><span class="dk-rank-txt">把一场战斗剪出呼吸感：节奏控制实操教程<small>剪刀与帧 · 互动 1,893</small></span></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 用户评价 ============ -->
+<section class="dk-section dk-anchor" id="dk-reviews">
+  <div class="dk-wrap">
+    <div class="dk-sec-head">
+      <div class="dk-sec-kicker">Community Voice</div>
+      <h2>社区之声 · 来自同好的真实反馈</h2>
+      <p>以下评价来自站内投稿与公开评论，经作者授权展示。语气与关注点各不相同，这正是社区的温度所在。</p>
+    </div>
+    <div class="dk-review-grid">
+      <article class="dk-review">
+        <div class="dk-review-head">
+          <span class="dk-avatar" style="background:linear-gradient(135deg,#e8543f,#8c2318)">林</span>
+          <div><b>林间小满</b><span>加入 1 年 3 个月</span></div>
+        </div>
+        <p>最开始只是来找设定资料的，结果被考据区长文吸引住了。这里分析镜头停顿的方式很克制，不会为了煽情而过度解读，读起来很舒服。</p>
+        <div class="dk-stars">★★★★★</div>
+      </article>
+      <article class="dk-review">
+        <div class="dk-review-head">
+          <span class="dk-avatar" style="background:linear-gradient(135deg,#4fd1c5,#1c6b64);color:#052a27">陈</span>
+          <div><b>陈九</b><span>剪辑爱好者</span></div>
+        </div>
+        <p>作为做剪辑的，这里教程板块对我帮助挺大。尤其是节奏那一篇，把镜头长度配比讲得很清楚，不是那种空泛的「要有感觉」。</p>
+        <div class="dk-stars">★★★★★</div>
+      </article>
+      <article class="dk-review">
+        <div class="dk-review-head">
+          <span class="dk-avatar" style="background:linear-gradient(135deg,#8f7bd6,#3f2e6b)">许</span>
+          <div><b>许知白</b><span>插画投稿者</span></div>
+        </div>
+        <p>投稿流程比我想象中规范，会明确告诉我哪一部分需要补充说明，也会提示版权注意事项。被官方推荐的那次确实很开心。</p>
+        <div class="dk-stars">★★★★☆</div>
+      </article>
+      <article class="dk-review">
+        <div class="dk-review-head">
+          <span class="dk-avatar" style="background:linear-gradient(135deg,#f2c14e,#8a6410);color:#2b1d00">周</span>
+          <div><b>周末放映室</b><span>长期关注</span></div>
+        </div>
+        <p>更新节奏很稳，基本每周都能看到新内容。公告条写得很具体，不是那种空话，能一眼看出来这周新增了什么，这点挺难得。</p>
+        <div class="dk-stars">★★★★★</div>
+      </article>
+      <article class="dk-review">
+        <div class="dk-review-head">
+          <span class="dk-avatar" style="background:linear-gradient(135deg,#5fa8c9,#245a75)">阿</span>
+          <div><b>阿栗</b><span>刚加入 2 周</span></div>
+        </div>
+        <p>新人指南写得挺好懂的，FAQ 里很多问题我原本都想问。就是希望能再多一点入门向的内容，有些长文对新人来说信息量有点大。</p>
+        <div class="dk-stars">★★★★☆</div>
+      </article>
+      <article class="dk-review">
+        <div class="dk-review-head">
+          <span class="dk-avatar" style="background:linear-gradient(135deg,#c9b58a,#6b5c3a);color:#241d0e">罗</span>
+          <div><b>罗盘与纸</b><span>文本分析爱好者</span></div>
+        </div>
+        <p>喜欢这里对改编取舍的讨论态度，不是简单评价好坏，而是分析为什么这样改会成立。这种讨论氛围在其他地方不太容易遇到。</p>
+        <div class="dk-stars">★★★★★</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 企业动态 ============ -->
+<section class="dk-section alt dk-anchor" id="dk-news">
+  <div class="dk-wrap">
+    <div class="dk-sec-head">
+      <div class="dk-sec-kicker">Updates</div>
+      <h2>企业动态 · 官方发布与内容更新</h2>
+      <p>关于黑兽2第二季樱花动漫官方网站的最新安排、企划进度与内容上新，均在此处同步。</p>
+    </div>
+    <div class="dk-news-grid">
+      <article class="dk-news">
+        <div class="dk-news-date"><b>19</b><span>11月</span></div>
+        <div class="dk-news-body">
+          <h3>第 12 章「暗誓之环」设定档案上线</h3>
+          <p>新增分镜设定、角色关系变化说明与三处关键镜头的线稿对照，档案室可检索。</p>
+        </div>
+      </article>
+      <article class="dk-news">
+        <div class="dk-news-date"><b>14</b><span>11月</span></div>
+        <div class="dk-news-body">
+          <h3>企划「樱影重绘」报名通道开启</h3>
+          <p>面向全体创作者征集重绘作品，投稿截止 12 月 8 日，优秀作品将进入官方推荐位。</p>
+        </div>
+      </article>
+      <article class="dk-news">
+        <div class="dk-news-date"><b>06</b><span>11月</span></div>
+        <div class="dk-news-body">
+          <h3>创作者访谈专栏新增两期</h3>
+          <p>本期邀请配音与美术方向的创作者，聊了聊「沉默镜头」的处理方式与取舍。</p>
+        </div>
+      </article>
+      <article class="dk-news">
+        <div class="dk-news-date"><b>28</b><span>10月</span></div>
+        <div class="dk-news-body">
+          <h3>站内搜索与标签筛选优化说明</h3>
+          <p>优化了角色名与设定术语的检索匹配，考据类内容现在可以按主题快速筛出。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="dk-section dk-anchor" id="dk-faq">
+  <div class="dk-wrap">
+    <div class="dk-sec-head">
+      <div class="dk-sec-kicker">Help Center</div>
+      <h2>帮助中心 · 常见问题</h2>
+      <p>关于内容、投稿、版权与账号的常见疑问，这里给出了官方说明。若仍未解决，可通过联系模块反馈。</p>
+    </div>
+    <div class="dk-faq">
+      <details>
+        <summary>这个网站与作品官方是什么关系？</summary>
+        <div class="dk-faq-body">本站是围绕「黑兽2第二季樱花动漫」建立的内容品牌官方网站，由编辑团队独立运营，负责设定整理、深度解析、创作者合作与社区规范维护。所有引用均在文中标注出处，与权利方保持沟通。</div>
+      </details>
+      <details>
+        <summary>如何参与「樱影重绘」企划？</summary>
+        <div class="dk-faq-body">在投稿入口提交作品文件与创作说明，注明参与企划名称即可。编辑团队会在 5 个工作日内回复初审意见，通过后进入展示池并参与后续推荐评选。截止时间为 12 月 8 日。</div>
+      </details>
+      <details>
+        <summary>投稿作品需要满足哪些要求？</summary>
+        <div class="dk-faq-body">需为原创或已获授权，画面与音轨清晰，不含未授权的第三方素材。美术类建议提供分辨率不低于 1920 像素的长边；视频类建议 1080P 以上并附文字简介。涉及他人角色设定时请注明。</div>
+      </details>
+      <details>
+        <summary>站内内容可以转载吗？</summary>
+        <div class="dk-faq-body">欢迎在注明来源与作者的前提下非商业转载。商业用途需提前联系获取书面授权。我们反对未经许可的整段搬运与二次剪辑发布。</div>
+      </details>
+      <details>
+        <summary>为什么有些内容需要登录后才能互动？</summary>
+        <div class="dk-faq-body">点赞、收藏与评论需要账号状态，目的是降低恶意刷量与维护社区秩序。浏览与搜索功能无需登录即可使用。</div>
+      </details>
+      <details>
+        <summary>如何反馈内容错误或提出建议？</summary>
+        <div class="dk-faq-body">可在联系模块填写反馈表单，或直接邮件联系编辑团队。涉及设定错误的反馈，请尽量附上具体章节与截图，便于核对。</div>
+      </details>
+      <details>
+        <summary>是否接受品牌合作与联合企划？</summary>
+        <div class="dk-faq-body">接受。我们更倾向与调性一致、尊重创作者权益的伙伴合作。合作提案请通过联系模块提交，注明合作形式与预期内容方向。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 联系 / 投稿 ============ -->
+<section class="dk-section alt dk-anchor" id="dk-contact">
+  <div class="dk-wrap">
+    <div class="dk-sec-head">
+      <div class="dk-sec-kicker">Contact</div>
+      <h2>联系我们 · 投稿与反馈入口</h2>
+      <p>无论是作品投稿、内容纠错还是合作洽谈，都可以从这里开始。我们重视每一条来自社区的反馈。</p>
+    </div>
+    <div class="dk-contact-grid" id="dk-submit">
+      <div class="dk-contact-panel">
+        <h3>与编辑团队取得联系</h3>
+        <p>工作日 10:00 – 18:00 在线响应，投稿与反馈一般在 3 个工作日内回复。</p>
+        <ul class="dk-contact-list">
+          <li><b>投稿邮箱</b><span>submit@sakura-blackbeast.example</span></li>
+          <li><b>合作洽谈</b><span>partner@sakura-blackbeast.example</span></li>
+          <li><b>编辑信箱</b><span>editor@sakura-blackbeast.example</span></li>
+          <li><b>社区规范</b><span>原创优先 · 标注来源 · 友善讨论</span></li>
+        </ul>
+      </div>
+      <div class="dk-contact-panel">
+        <h3>快速提交</h3>
+        <p>填写标题与简要说明，即可打开投稿表单。请勿在说明中填写他人隐私信息。</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+          <button class="dk-btn dk-btn-primary" id="dkOpenSubmit">我要投稿</button>
+          <button class="dk-btn dk-btn-ghost" id="dkOpenReport">反馈问题</button>
+          <button class="dk-btn dk-btn-ghost" id="dkShareBottom">分享本站</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="dk-footer">
+  <div class="dk-wrap">
+    <div class="dk-footer-top">
+      <div class="dk-footer-brand">
+        <a class="dk-brand" href="#dk-home" data-dk-scroll>
+          <span class="dk-brand-mark">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 44 L32 16 L44 44 Z" fill="#fff" opacity=".92"/><circle cx="32" cy="38" r="5" fill="#f2c14e"/></svg>
+          </span>
+          <span class="dk-brand-name">黑兽2第二季樱花动漫<small>SAKURA ANIME OFFICIAL</small></span>
+        </a>
+        <p>黑兽2第二季樱花动漫官方网站。以原创与正版为底线，深耕暗黑奇幻内容生态，为创作者与观众搭建值得信赖的深度社区。</p>
+      </div>
+      <div>
+        <h4>内容入口</h4>
+        <ul class="dk-footer-links">
+          <li><a href="#dk-focus" data-dk-scroll>焦点内容</a></li>
+          <li><a href="#dk-videos" data-dk-scroll>热门影像</a></li>
+          <li><a href="#dk-topics" data-dk-scroll>专题企划</a></li>
+          <li><a href="#dk-wall" data-dk-scroll>影像作品墙</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于我们</h4>
+        <ul class="dk-footer-links">
+          <li><a href="#dk-deep" data-dk-scroll>品牌深度解析</a></li>
+          <li><a href="#dk-creators" data-dk-scroll>创作者矩阵</a></li>
+          <li><a href="#dk-news" data-dk-scroll>企业动态</a></li>
+          <li><a href="#dk-reviews" data-dk-scroll>社区之声</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>支持与帮助</h4>
+        <ul class="dk-footer-links">
+          <li><a href="#dk-faq" data-dk-scroll>常见问题</a></li>
+          <li><a href="#dk-contact" data-dk-scroll>联系我们</a></li>
+          <li><a href="#dk-submit" data-dk-scroll>投稿入口</a></li>
+          <li><a href="#dk-home" data-dk-scroll>回到顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="dk-footer-bottom">
+      <span>黑兽2第二季樱花动漫 官方网站 | 版权所有 | 持续运营中</span>
+      <span>内容仅供学习与交流 · 转载请注明出处 · 备案信息以官方公示为准</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 回到顶部 -->
+<button class="dk-top-btn" id="dkTopBtn" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<!-- Toast -->
+<div class="dk-toast" id="dkToast" role="status" aria-live="polite"></div>
+
+<!-- 投稿 / 反馈弹窗 -->
+<div class="dk-modal" id="dkModal" role="dialog" aria-modal="true" aria-labelledby="dkModalTitle">
+  <div class="dk-modal-box">
+    <button class="dk-modal-close" id="dkModalClose" aria-label="关闭">×</button>
+    <h3 id="dkModalTitle">作品投稿</h3>
+    <form id="dkModalForm">
+      <input type="text" id="dkFormTitle" placeholder="内容标题，例如：黑兽2第二季 第9话 分镜重绘" required>
+      <input type="text" id="dkFormContact" placeholder="联系方式（邮箱或社区昵称）" required>
+      <textarea id="dkFormDesc" placeholder="简要说明创作思路或反馈内容…"></textarea>
+      <button type="submit" class="dk-btn dk-btn-primary" id="dkFormSubmit">提交</button>
+    </form>
+    <p class="dk-modal-tip">提交即表示你确认内容为原创或已获授权，并同意编辑团队在站内展示与推荐。</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var dkState = { toastTimer: null };
+
+  function dkToast(msg){
+    var t = document.getElementById('dkToast');
+    if(!t) return;
+    t.textContent = msg;
+    t.classList.add('is-show');
+    clearTimeout(dkState.toastTimer);
+    dkState.toastTimer = setTimeout(function(){ t.classList.remove('is-show'); }, 2200);
+  }
+
+  /* ---------- 移动端导航 ---------- */
+  var burger = document.getElementById('dkBurger');
+  var mobileNav = document.getElementById('dkMobileNav');
+  if(burger && mobileNav){
+    burger.addEventListener('click', function(){
+      var open = mobileNav.classList.toggle('is-open');
+      burger.classList.toggle('is-open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  /* ---------- 平滑锚点滚动（考虑吸顶高度） ---------- */
+  document.querySelectorAll('[data-dk-scroll]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      var href = link.getAttribute('href');
+      if(!href || href.charAt(0) !== '#') return;
+      var target = document.querySelector(href);
+      if(!target) return;
+      e.preventDefault();
+      var sticky = document.querySelector('.dk-sticky');
+      var offset = sticky ? sticky.offsetHeight : 0;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - offset + 2;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+      if(mobileNav && mobileNav.classList.contains('is-open')){
+        mobileNav.classList.remove('is-open');
+        burger.classList.remove('is-open');
+        burger.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+
+  /* ---------- 搜索反馈 ---------- */
+  var searchInput = document.getElementById('dkSearchInput');
+  var searchBtn = document.getElementById('dkSearchBtn');
+  function dkDoSearch(){
+    if(!searchInput) return;
+    var kw = searchInput.value.trim();
+    if(!kw){
+      dkToast('请输入关键词，例如「暗纹」「分镜」「樱影重绘」');
+      searchInput.focus();
+      return;
+    }
+    var cards = document.querySelectorAll('.dk-vcard');
+    var hit = 0;
+    cards.forEach(function(card){
+      var text = card.textContent || '';
+      if(text.indexOf(kw) > -1){ hit++; }
+    });
+    if(hit > 0){
+      dkToast('找到 ' + hit + ' 条与「' + kw + '」相关的内容，已为你高亮');
+      cards.forEach(function(card){
+        var text = card.textContent || '';
+        card.style.outline = (text.indexOf(kw) > -1) ? '2px solid #e8543f' : 'none';
+        card.style.outlineOffset = '2px';
+      });
+      var first = null;
+      cards.forEach(function(card){
+        if(!first && (card.textContent || '').indexOf(kw) > -1) first = card;
+      });
+      if(first){
+        var sticky = document.querySelector('.dk-sticky');
+        var offset = sticky ? sticky.offsetHeight : 0;
+        window.scrollTo({ top: first.getBoundingClientRect().top + window.pageYOffset - offset - 20, behavior:'smooth' });
+      }
+    } else {
+      dkToast('暂未找到「' + kw + '」相关结果，换个关键词试试');
+      cards.forEach(function(card){ card.style.outline = 'none'; });
+    }
+  }
+  if(searchBtn) searchBtn.addEventListener('click', dkDoSearch);
+  if(searchInput) searchInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); dkDoSearch(); }
+  });
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  document.querySelectorAll('[data-dk-like]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var numEl = btn.querySelector('[data-dk-like-num]');
+      var liked = btn.classList.toggle('is-liked');
+      if(numEl){
+        var n = parseInt(numEl.textContent.replace(/,/g,''), 10) || 0;
+        n = liked ? n + 1 : Math.max(0, n - 1);
+        numEl.textContent = n.toLocaleString('en-US');
+      }
+      dkToast(liked ? '已点赞' : '已取消点赞');
+    });
+  });
+  document.querySelectorAll('[data-dk-save]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var saved = btn.classList.toggle('is-saved');
+      dkToast(saved ? '已收藏到个人书架' : '已取消收藏');
+    });
+  });
+
+  /* ---------- 作者档案弹窗 ---------- */
+  var modal = document.getElementById('dkModal');
+  var modalTitle = document.getElementById('dkModalTitle');
+  var modalForm = document.getElementById('dkModalForm');
+  var formTitle = document.getElementById('dkFormTitle');
+  var formContact = document.getElementById('dkFormContact');
+  var formDesc = document.getElementById('dkFormDesc');
+
+  function dkOpenModal(mode){
+    if(!modal) return;
+    if(mode === 'author'){
+      modalTitle.textContent = '创作者档案';
+      formTitle.value = '';
+      formContact.value = '';
+      formDesc.value = '';
+      formTitle.placeholder = '作者昵称';
+      formContact.placeholder = '擅长领域';
+      formDesc.placeholder = '作者简介';
+      document.getElementById('dkFormSubmit').textContent = '关闭档案';
+    } else if(mode === 'report'){
+      modalTitle.textContent = '问题反馈';
+      formTitle.value = '';
+      formContact.value = '';
+      formDesc.value = '';
+      formTitle.placeholder = '问题类型，例如：内容纠错 / 页面异常';
+      formContact.placeholder = '联系方式';
+      formDesc.placeholder = '请描述具体问题…';
+      document.getElementById('dkFormSubmit').textContent = '提交反馈';
+    } else {
+      modalTitle.textContent = '作品投稿';
+      formTitle.value = '';
+      formContact.value = '';
+      formDesc.value = '';
+      formTitle.placeholder = '内容标题，例如：黑兽2第二季 第9话 分镜重绘';
+      formContact.placeholder = '联系方式（邮箱或社区昵称）';
+      formDesc.placeholder = '简要说明创作思路或反馈内容…';
+      document.getElementById('dkFormSubmit').textContent = '提交';
+    }
+    modal.classList.add('is-open');
+  }
+
+  document.querySelectorAll('[data-dk-author]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var name = btn.getAttribute('data-dk-author');
+      modalTitle.textContent = '创作者档案 · ' + name;
+      formTitle.value = name;
+      formContact.value = '签约创作者';
+      formDesc.value = '该创作者长期为黑兽2第二季樱花动漫社区提供专业内容，擅长领域已在个人主页标注。';
+      document.getElementById('dkFormSubmit').textContent = '已了解';
+      modal.classList.add('is-open');
+    });
+  });
+
+  var openSubmit = document.getElementById('dkOpenSubmit');
+  if(openSubmit) openSubmit.addEventListener('click', function(){ dkOpenModal('submit'); });
+  var openReport = document.getElementById('dkOpenReport');
+  if(openReport) openReport.addEventListener('click', function(){ dkOpenModal('report'); });
+
+  function dkCloseModal(){
+    if(modal) modal.classList.remove('is-open');
+  }
+  var closeBtn = document.getElementById('dkModalClose');
+  if(closeBtn) closeBtn.addEventListener('click', dkCloseModal);
+  if(modal){
+    modal.addEventListener('click', function(e){
+      if(e.target === modal) dkCloseModal();
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') dkCloseModal();
+  });
+
+  if(modalForm){
+    modalForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var title = formTitle.value.trim();
+      if(modalTitle.textContent.indexOf('档案') > -1){
+        dkCloseModal();
+        return;
+      }
+      if(!title){
+        dkToast('请填写标题或问题类型');
+        formTitle.focus();
+        return;
+      }
+      dkCloseModal();
+      dkToast(modalTitle.textContent === '问题反馈' ? '反馈已收到，感谢你的支持' : '投稿已提交，编辑团队将尽快回复');
+    });
+  }
+
+  /* ---------- 分享 ---------- */
+  function dkShare(){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(window.location.href).then(function(){
+        dkToast('链接已复制，可分享给同好');
+      }).catch(function(){
+        dkToast('分享链接：' + window.location.href);
+      });
+    } else {
+      dkToast('分享链接：' + window.location.href);
+    }
+  }
+  var shareTop = document.getElementById('dkShareTop');
+  if(shareTop) shareTop.addEventListener('click', dkShare);
+  var shareBottom = document.getElementById('dkShareBottom');
+  if(shareBottom) shareBottom.addEventListener('click', dkShare);
+
+  /* ---------- 回到顶部 ---------- */
+  var topBtn = document.getElementById('dkTopBtn');
+  window.addEventListener('scroll', function(){
+    if(window.pageYOffset > 520){ topBtn.classList.add('is-show'); }
+    else { topBtn.classList.remove('is-show'); }
+  }, { passive:true });
+  if(topBtn) topBtn.addEventListener('click', function(){
+    window.scrollTo({ top:0, behavior:'smooth' });
+  });
+
+  /* ---------- 数字滚动 ---------- */
+  var counted = false;
+  function dkCountUp(){
+    if(counted) return;
+    var items = document.querySelectorAll('[data-dk-count]');
+    if(!items.length) return;
+    var hero = document.getElementById('dk-home');
+    if(!hero) return;
+    var rect = hero.getBoundingClientRect();
+    if(rect.top < window.innerHeight && rect.bottom > 0){
+      counted = true;
+      items.forEach(function(el){
+        var target = parseInt(el.getAttribute('data-dk-count'), 10) || 0;
+        var start = 0, dur = 900, t0 = null;
+        function step(ts){
+          if(!t0) t0 = ts;
+          var p = Math.min((ts - t0) / dur, 1);
+          el.textContent = Math.round(start + (target - start) * p);
+          if(p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }
+  }
+  window.addEventListener('scroll', dkCountUp, { passive:true });
+  window.addEventListener('load', dkCountUp);
+  dkCountUp();
+
+  /* ---------- 导航高亮 ---------- */
+  var sections = ['dk-home','dk-focus','dk-topics','dk-creators','dk-news','dk-faq','dk-contact'];
+  var navLinks = document.querySelectorAll('.dk-nav a');
+  window.addEventListener('scroll', function(){
+    var y = window.pageYOffset + 180;
+    var current = sections[0];
+    sections.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el && el.offsetTop <= y) current = id;
+    });
+    navLinks.forEach(function(a){
+      a.classList.toggle('is-active', a.getAttribute('href') === '#' + current);
+    });
+  }, { passive:true });
+})();
+</script>
+</body>
+                                                                                                                                                                                                                                                                 </html>
